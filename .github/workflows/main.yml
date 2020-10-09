@@ -23,7 +23,7 @@ jobs:
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v1
         with:
-          file_or_dir: config/prod/. routing.yaml security.yaml
+          file_or_dir: config/packages/.
           strict: true
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.5.6
