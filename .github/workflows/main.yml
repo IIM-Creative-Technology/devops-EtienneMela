@@ -12,6 +12,10 @@ jobs:
     steps:
       - name: Init project
         uses: actions/checkout@v2
+      - name: Remove File
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: /src/DataFixtures/AppFixtures.php
       - name: PHP Linter
         uses: michaelw90/PHP-Lint@master
       - name: Security checker
@@ -20,10 +24,6 @@ jobs:
         uses: docker://oskarstark/phpstan-ga
         with:
           args: analyse src/ --level=5
-      - name: Remove File
-        uses: JesseTG/rm@v1.0.2
-        with:
-          path: /src/DataFixtures/AppFixtures.php
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v1
         with:
