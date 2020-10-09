@@ -37,4 +37,3 @@ jobs:
           heroku_api_key: ${{secrets.HEROKU_KEY}}
           heroku_app_name: ${{secrets.HEROKU_APP_DEVELOP}}
           heroku_email: ${{secrets.HEROKU_EMAIL}}
-          procfile: "web: heroku-php-apache2 public/"
