@@ -23,7 +23,7 @@ jobs:
       - name: Remove File
         uses: JesseTG/rm@v1.0.2
         with:
-          path: /path/to/something/you/want/to/delete
+          path: /src/DataFixtures/AppFixtures.php
       - name: yaml-lint
         uses: ibiqlik/action-yamllint@v1
         with:
