@@ -22,15 +22,15 @@ jobs:
         uses: michaelw90/PHP-Lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
-      - name: PHPStan
-        uses: docker://oskarstark/phpstan-ga
-        with:
-          args: analyse src/ --level=5
-      - name: Lint Yaml
-        uses: ibiqlik/action-yamllint@v1
-        with:
-          file_or_dir: config/packages/.
-          strict: false
+      #- name: PHPStan
+      #  uses: docker://oskarstark/phpstan-ga
+      #  with:
+      #    args: analyse src/ --level=5
+      #- name: Lint Yaml
+      #  uses: ibiqlik/action-yamllint@v1
+      #  with:
+      #    file_or_dir: config/packages/.
+      #    strict: false
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.5.6
         with:
