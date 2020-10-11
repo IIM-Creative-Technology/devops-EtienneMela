@@ -19,7 +19,7 @@ Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec
 
 ## Heroku
 
-##### Les liens des Apps Heroku :
+#### Les liens des Apps Heroku :
 
 * [**Prod**](https://symfony-actions-main.herokuapp.com/)
 * [**Preprod**](https://symfony-cicd-develop.herokuapp.com/) 
@@ -27,16 +27,16 @@ Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec
 ## Les problèmes encontrés
 
 * Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. 
-  * Corrigé en ajoutant la variable APP_ENV=prod dans Heroku.
+  * Corrigé en ajoutant la variable APP_ENV=prod sur l'app Heroku prod
   
 * Problèmes lors de la création des fixtures avec PHPStan, qui lève une erreur avec l'existence d'un fichier Fixtures dont les dépendances ne sont pas installées 
-  * Corrigé en ajoutant un fichier Neon ne prenant pas en compte les AppFixtures.php
+  * Corrigé en ajoutant le fichier ```phpstan.neon``` ne prenant pas en compte les AppFixtures.php
   
 * Problèmes avec le PhPLinter, des fois beaucoup trop strict 
-  * Corrigé en rajoutant un fichier de configuration (```.yamllint.yml```) et en passant les erreurs bloquantes en warnings
+  * Corrigé en rajoutant un fichier de configuration ```.yamllint.yml``` et en passant les erreurs bloquantes en warnings
 
 * Erreur avec Heroku et WebProfiler bundle sur l'environnement preprod
-  * Corrigé en ajoutant la variable APP_ENV=dev dans Heroku.
+  * Impossible de se mettre en dev sur heroku, mise de la variable APP_ENV=prod sur le Heroku Preprod.
   
 * Erreur Symfony lors du lancement de l'application : Attempted to load class "WebProfilerBundle" from namespace "Symfony\Bundle\WebProfilerBundle"
   * En cours de correction
