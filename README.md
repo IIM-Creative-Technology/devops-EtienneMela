@@ -1,6 +1,4 @@
 # Projet Symfony pour Devops
-[![Main Status](https://github.com/EtienneMela/devops-EtienneMela/workflows/Deploy main/badge.svg)](https://github.com/EtienneMela/devops-EtienneMela/actions)
-[![Develop Status](https://github.com/EtienneMela/devops-EtienneMela/workflows/Deploy develop/badge.svg)](https://github.com/EtienneMela/devops-EtienneMela/actions)
 ##### Ci-dessous une liste des actions utilisées ainsi que les problèmes encontrées et ce qui est prévu pour la suite
 ## CI
 
