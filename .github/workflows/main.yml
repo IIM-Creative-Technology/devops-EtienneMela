@@ -3,12 +3,19 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Init project
         uses: actions/checkout@v2
+      - name: Remove File
+        uses: JesseTG/rm@v1.0.2
+        with:
+          path: /src/DataFixtures/AppFixtures.php
       - name: PHP Linter
         uses: michaelw90/PHP-Lint@master
       - name: Security checker
@@ -16,7 +23,11 @@ jobs:
       - name: PHPStan
         uses: docker://oskarstark/phpstan-ga
         with:
-          args: analyse src/ --level=5
+          args: analyse src/ --level=4
+      - name: yaml-lint
+        uses: ibiqlik/action-yamllint@v1
+        with:
+          file_or_dir: config/packages/.
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.5.6
         with:
