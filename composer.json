@@ -81,7 +81,6 @@
             "doctrine:schema:update --force": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
         ],
         "post-update-cmd": [
             "@auto-scripts"

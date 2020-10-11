@@ -3,6 +3,8 @@
 ## CI
 
   - Ajout de deux fichiers yaml, un pour le develop (preprod) l'autre pour main (prod). Les deux déclenchent les jobs lorsqu'il y'a une PR ou un push.
+  -> Preprod est en APP_ENV=dev
+  -> Prod en APP_ENV=prod
   - Ajout de divers test et controles :
 
   | Nom | Action | Utilisation | Ajout de fichiers de configuration |
@@ -16,9 +18,14 @@
 
 ## Les problèmes encontrés
 
-  - Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. Corrigé en ajoutant la variable APP_ENV = prod dans Heroku.
-  - Problèmes lors de la création des fixtures avec PHPStan, qui lève une erreur avec l'existence d'un fichier Fixtures dont les dépendances ne sont pas installées -> problème résolu en ajoutant un fichier Neon ne prenant pas en compte les AppFixtures.php
-  - Problèmes avec le PhPLinter, des fois beaucoup trop strict
+  - Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. 
+  -> Corrigé en ajoutant la variable APP_ENV = prod dans Heroku.
+  
+  - Problèmes lors de la création des fixtures avec PHPStan, qui lève une erreur avec l'existence d'un fichier Fixtures dont les dépendances ne sont pas installées 
+  -> Corrigé en ajoutant un fichier Neon ne prenant pas en compte les AppFixtures.php
+  
+  - Problèmes avec le PhPLinter, des fois beaucoup trop strict 
+  -> Corrigé en rajoutant un fichier de configuration (```.yamllint.yml```) et en passant les erreurs bloquantes en warnings
 
 ## Todos
 
