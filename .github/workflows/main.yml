@@ -1,4 +1,4 @@
-name: Deploy main 
+name: Deploy main
 on:
   push:
     branches:
@@ -12,22 +12,23 @@ jobs:
     steps:
       - name: Init project
         uses: actions/checkout@v2
-      - name: Remove File
-        uses: JesseTG/rm@v1.0.2
+      - name: Cache
+        uses: actions/cache@v2
+        id: cache-db
         with:
-          path: /src/DataFixtures/AppFixtures.php
+          path: ~/.symfony/cache
+          key: db
       - name: PHP Linter
         uses: michaelw90/PHP-Lint@master
       - name: Security checker
         uses: symfonycorp/security-checker-action@v2
       - name: PHPStan
         uses: docker://oskarstark/phpstan-ga
-        with:
-          args: analyse src/ --level=4
-      - name: yaml-lint
+      - name: Lint Yaml
         uses: ibiqlik/action-yamllint@v1
         with:
           file_or_dir: config/packages/.
+          config_file: .yamllint.yml
       - name: Deploy to Heroku
         uses: akhileshns/heroku-deploy@v3.5.6
         with:
