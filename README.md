@@ -44,5 +44,5 @@ Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec
 ## Todos
 
 * Corriger les bugs administrateurs
-* Rajouter du contenu
-* Modifier et ajouter plus de fixtures et des tests en découlant
+* Rajouter du contenu et compléter les entités
+* Modifier et ajouter plus de fixtures et des tests pour celles-ci

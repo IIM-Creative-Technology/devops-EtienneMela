@@ -8,6 +8,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 use EasyCorp\Bundle\EasyAdminBundle\Router\CrudUrlGenerator;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\Users;
+use App\Entity\Recipe;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -16,9 +18,7 @@ class DashboardController extends AbstractDashboardController
      */
     public function index(): Response
     {
-        $routeBuilder = $this->get(CrudUrlGenerator::class)->build();
-
-        return $this->redirect($routeBuilder->setController(UsersCrudController::class)->generateUrl());
+        return $this->render('index.html.twig');
 
     
     }
@@ -31,7 +31,14 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
-        
+        return [
+            MenuItem::linkToDashboard('Dashboard', 'fa fa-home'),
+
+            MenuItem::section('----'),
+            MenuItem::linkToCrud('Recipes', 'fa fa-cake', Recipe::class),
+
+            MenuItem::section('Users'),
+            MenuItem::linkToCrud('Users', 'fa fa-user', Users::class),
+        ];
     }
 }
