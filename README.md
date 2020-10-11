@@ -16,6 +16,14 @@ Yaml Lint| ```ibiqlik/action-yamllint@v1v``` | Linter Yaml pour les fichiers de 
 Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec les secrets présents sur Github | Oui : ```Procfile```
  ~~Remove File~~ | ```JesseTG/rm@v1.0.2``` | Supprimer un fichier pendant le fonctionnement des jobs (utilisé pour supprimer DataFixtures et empècher de lever l'erreur mais c'etait une mauvaise idée | - |
 
+
+## Heroku
+
+##### Les liens des Apps Heroku :
+
+* [**Prod**](https://symfony-actions-main.herokuapp.com/)
+* [**Preprod**](https://symfony-cicd-develop.herokuapp.com/) 
+
 ## Les problèmes encontrés
 
 * Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. 
