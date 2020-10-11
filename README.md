@@ -1,10 +1,13 @@
 # Projet Symfony pour Devops
+[![Main Status](https://xxx.execute-api.us-west-2.amazonaws.com/production/badge/EtienneMela/devops-EtienneMela)](https://xxx.execute-api.us-west-2.amazonaws.com/production/results/{owner}/devops-EtienneMela?branch=main)
+[![Develop Status](https://xxx.execute-api.us-west-2.amazonaws.com/production/badge/EtienneMela/devops-EtienneMela)](https://xxx.execute-api.us-west-2.amazonaws.com/production/results/EtienneMela/devops-EtienneMela?branch=develop)
 ##### Ci-dessous une liste des actions utilisées ainsi que les problèmes encontrées et ce qui est prévu pour la suite
 ## CI
 
 * Ajout de deux fichiers yaml, un pour le develop (preprod) l'autre pour main (prod). Les deux déclenchent les jobs lorsqu'il y'a une PR ou un push. 
   * Preprod est en APP_ENV=dev
   * Prod en APP_ENV=prod
+* Ajout de Postgres sur Heroku pour pouvoir tester les champs et le CRUD
 * Ajout de divers test et controles :
 
  Nom | Action | Utilisation | Ajout de fichiers de configuration 
@@ -15,6 +18,7 @@ PhpStan| ```docker://oskarstark/phpstan-ga``` | Utlisé pour vérifier la cohér
 Yaml Lint| ```ibiqlik/action-yamllint@v1v``` | Linter Yaml pour les fichiers de config symfony | Oui : ```.yamllint.yml```
 Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec les secrets présents sur Github | Oui : ```Procfile```
  ~~Remove File~~ | ```JesseTG/rm@v1.0.2``` | Supprimer un fichier pendant le fonctionnement des jobs (utilisé pour supprimer DataFixtures et empècher de lever l'erreur mais c'etait une mauvaise idée | - |
+
 
 
 ## Heroku
@@ -38,11 +42,12 @@ Heroku deploy| ```akhileshns/heroku-deploy@v3.5.6``` | Déployer sur Heroku avec
 * Erreur avec Heroku et WebProfiler bundle sur l'environnement preprod
   * Impossible de se mettre en dev sur heroku, mise de la variable APP_ENV=prod sur le Heroku Preprod.
   
-* Erreur Symfony lors du lancement de l'application : Attempted to load class "WebProfilerBundle" from namespace "Symfony\Bundle\WebProfilerBundle"
-  * En cours de correction
+* Erreur Symfony lors du lancement de l'application : Attempted to load class "WebProfilerBundle" from namespace "Symfony\Bundle\WebProfilerBundle" + problème authentification Heroku
+  * En cours 
+
 
 ## Todos
 
-* Corriger les bugs administrateurs
+* Corriger l'affichage qui ne prends pas en compte le css
 * Rajouter du contenu et compléter les entités
-* Modifier et ajouter plus de fixtures et des tests pour celles-ci
+* Modifier et ajouter des fixtures et des tests pour celles-ci
