@@ -24,8 +24,6 @@ jobs:
         uses: symfonycorp/security-checker-action@v2
       - name: PHPStan
         uses: docker://oskarstark/phpstan-ga
-        with:
-          args: analyse src/ --level=4
       - name: Lint Yaml
         uses: ibiqlik/action-yamllint@v1
         with:
