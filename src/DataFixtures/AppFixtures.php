@@ -13,6 +13,7 @@ class AppFixtures extends Fixture
             $user = new Users();
             $user->setName('Nom' . $i);
             $user->setSurname('Prenom' . $i);
+            $user->setIsAdmin(true);
             $manager->persist($user);
         }
 

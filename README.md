@@ -1,5 +1,5 @@
 # Projet Symfony pour Devops
-- Ci-dessous une liste des actions utilisées ainsi que les problèmes encontrées et ce qui est prévu pour la suite
+  - Ci-dessous une liste des actions utilisées ainsi que les problèmes encontrées et ce qui est prévu pour la suite
 ## CI
 
   - Ajout de deux fichiers yaml, un pour le develop (preprod) l'autre pour main (prod). Les deux déclenchent les jobs lorsqu'il y'a une PR ou un push.
@@ -16,12 +16,12 @@
 
 ## Les problèmes encontrés
 
- - Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. Corrigé en ajoutant la variable APP_ENV = prod dans Heroku.
-- Problèmes lors de la création des fixtures avec PHPStan, qui lève une erreur avec l'existence d'un fichier Fixtures dont les dépendances ne sont pas installées
-- Problèmes avec le PhPLinter, des fois beaucoup trop strict
+  - Problèmes avec Heroku et conflit entre le composer —no-dev et Symfony qui se met en environnement dev par défaut. Corrigé en ajoutant la variable APP_ENV = prod dans Heroku.
+  - Problèmes lors de la création des fixtures avec PHPStan, qui lève une erreur avec l'existence d'un fichier Fixtures dont les dépendances ne sont pas installées
+  - Problèmes avec le PhPLinter, des fois beaucoup trop strict
 
 ## Todos
 
-Corriger les bugs administrateurs
-Rajouter du contenu
-Modifier et ajouter plus de fixtures et des tests en découlant
+  - Corriger les bugs administrateurs
+  - Rajouter du contenu
+  - Modifier et ajouter plus de fixtures et des tests en découlant
